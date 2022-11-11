@@ -18,7 +18,7 @@
         </Button></TextBlock>
         
         <TextBlock Height="60" Grid.Row="1" Background="DeepSkyBlue">
-            <Button Background="#FF3A69C7"  >
+            <Button Click="Button_Click" Background="#FF3A69C7"  >
                 Marketplace
             </Button>
         </TextBlock>
