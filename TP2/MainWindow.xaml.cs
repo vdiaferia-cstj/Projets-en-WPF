@@ -32,5 +32,11 @@ namespace TP2
             windowMarketplace.Show();
             mainWindow.Close();
         }
+
+        private void Wall_Button(object sender, RoutedEventArgs e)
+        {
+            Wall window = new Wall();
+            window.Show();
+        }
     }
 }
