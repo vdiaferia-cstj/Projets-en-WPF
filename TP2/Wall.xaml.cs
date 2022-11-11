@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TP2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Wall.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Wall : Window
     {
-        public MainWindow()
+        public Wall()
         {
             InitializeComponent();
-        }
-
-        private void Wall_Button(object sender, RoutedEventArgs e)
-        {
-            Wall window = new Wall();
-            window.Show();
         }
     }
 }
