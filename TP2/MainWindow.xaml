@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="250" Width="250">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0"  Height="60" Background="DeepSkyBlue">
+        <Button Background="#FF3A69C7">
+        Wall
+        </Button></TextBlock>
+        
+        <TextBlock Height="60" Grid.Row="1" Background="DeepSkyBlue">
+            <Button Background="#FF3A69C7"  >
+                Marketplace
+            </Button>
+        </TextBlock>
 
+        
     </Grid>
+
+
 </Window>
