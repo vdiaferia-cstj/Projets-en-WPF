@@ -6,29 +6,53 @@
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
         Title="Wall" Height="450" Width="800">
-    <Grid >
+    <Grid Background="#FF292525">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="450"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Background="#FF5E79E8">
-            <TextBlock HorizontalAlignment="Center"
+
+        <StackPanel>
+            <Grid Background="#FF5E79E8">
+                <TextBlock HorizontalAlignment="Center"
                        FontSize="40"
                        FontWeight="Bold"
                        Foreground="White"
-                       Margin="0,10,0,0"> WALL </TextBlock>
-        </Grid>
+                       Margin="0,10,0,0"> WALL</TextBlock>
+            </Grid>
 
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                
-            </Grid.ColumnDefinitions>
-        </Grid>
-        
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="375"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,0,0,0" Background="#FF1F1F1F">
+                    <TextBlock Margin="0,0,0,10" Foreground="White">Logged in as :</TextBlock>
+                    <ComboBox ></ComboBox>
+                    <Grid Background="#FF363836">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90"></RowDefinition>
+
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    <TextBlock Margin="0,0,0,10" Foreground="White">View posts of :</TextBlock>
+                    <ComboBox Margin="0,0,0,10"></ComboBox>
+                    <TextBlock Margin="0,0,0,10" Foreground="White">Sort by :</TextBlock>
+                    <CheckBox Margin="0,0,0,10" Foreground="White">Date (newest first)</CheckBox>
+                    <CheckBox Margin="0,0,0,10" Foreground="White">Popularity (highest first)</CheckBox>
+
+                </StackPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
-   
+
 </Window>
