@@ -25,6 +25,14 @@ namespace TP2
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            Marketplace windowMarketplace = new Marketplace();
+            windowMarketplace.Show();
+            mainWindow.Close();
+        }
+
         private void Wall_Button(object sender, RoutedEventArgs e)
         {
             Wall window = new Wall();
