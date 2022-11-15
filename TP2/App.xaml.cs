@@ -24,5 +24,14 @@ namespace TP2
 
 
         };
+
+        public Dictionary<int, User> Users { get => _user; }
+        private readonly Dictionary<int, User> _user = new Dictionary<int, User>()
+        {
+
+
+
+        };
+
     }
 }
