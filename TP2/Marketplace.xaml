@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="175"></ColumnDefinition>
+            <ColumnDefinition Width="185"></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
@@ -22,7 +22,7 @@
         </Grid>
 
         <Grid  Grid.Row="1" Background="#FF3E3A3A">
-        <StackPanel Background="#FF3E3A3A" Margin="10,0,0,0">
+        <StackPanel Background="#FF3E3A3A" Margin="10,0,10,0">
             <TextBlock Foreground="White">Category</TextBlock>
                 <ListBox Height="20">
                     
@@ -37,6 +37,29 @@
                 <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
 
                 </WrapPanel>
+                <TextBlock Foreground="White">Maker</TextBlock>
+                <ListBox Height="20">
+
+                </ListBox>
+                <TextBlock Foreground="White">Brand</TextBlock>
+                <ListBox Height="20">
+
+                </ListBox>
+                <TextBlock Foreground="White">Year</TextBlock>
+                <WrapPanel>
+                    <TextBox Background="#FF887B7B" Width="70"></TextBox>
+                    <TextBlock Foreground="White">to</TextBlock>
+                    <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
+
+                </WrapPanel>
+                <TextBlock Foreground="White">Mileage</TextBlock>
+                <WrapPanel>
+                    <TextBox Background="#FF887B7B" Width="70"></TextBox>
+                    <TextBlock Foreground="White">to</TextBlock>
+                    <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
+
+                </WrapPanel>
+                <Button Background="#FF5D8AD4" Foreground="White" Margin="0,10,0,0" > Search </Button>
             </StackPanel>
         </Grid>
     </Grid>
