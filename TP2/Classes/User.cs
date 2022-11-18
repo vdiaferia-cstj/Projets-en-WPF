@@ -9,9 +9,17 @@ namespace TP2
     public class User
     {
         public int Id;
-        public string Prenom;
-        public string Nom;
+        public string FirstName;
+        public string LastName;
+        public string Image;
         public string Password;
-        public string Courriel;
+        public string Email;
+        public string ImageDeFond;
+
+        public override string ToString()
+        {
+            return $"{FirstName}  {LastName}";
+        }
     }
+
 }
