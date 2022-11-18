@@ -34,5 +34,21 @@ namespace TP2
 
 
         };
+
+        public Dictionary<int, User> Users { get => _user; }
+        private readonly Dictionary<int, User> _user = new Dictionary<int, User>()
+        {
+            {1,new User() { Image = "user1.jpg", FirstName= "Tom", LastName  ="Richards"}},
+            {2,new User() { Image = "user2.jpg", FirstName= "Elliot",LastName  ="Hart"}},
+            {3,new User() { Image = "user3.jpg", FirstName= "Rachel",LastName  ="Chapman"}},
+            {4,new User() { Image = "user4.jpg", FirstName= "Myriam",LastName  ="Leblanc"}},
+            {5,new User() { Image = "user5.jpg", FirstName= "Paul", LastName ="Burnham"}},
+
+
+
+        };
+
+     
+
     }
 }

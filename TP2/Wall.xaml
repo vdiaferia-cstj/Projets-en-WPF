@@ -37,15 +37,23 @@
                 </Grid.RowDefinitions>
                 <StackPanel Margin="0,0,0,0" Background="#FF1F1F1F">
                     <TextBlock Margin="0,0,0,10" Foreground="White">Logged in as :</TextBlock>
-                    <ComboBox ></ComboBox>
+                    <ComboBox x:Name="LesUtilisateurs" SelectionChanged="LesUtilisateurs_SelectionChanged" ></ComboBox>
                     <Grid Background="#FF363836">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="90"></RowDefinition>
-
+                          
                         </Grid.RowDefinitions>
+                        <StackPanel>
+                            <TextBlock Margin="0,0,0,0" Foreground="White" x:Name="NomUser"></TextBlock>
+                        <TextBlock  Foreground="White" x:Name="lesFriends">Friends</TextBlock>
+                            <ComboBoxItem>
+                    
+
+                            </ComboBoxItem>
+                        </StackPanel>
                     </Grid>
                     <TextBlock Margin="0,0,0,10" Foreground="White">View posts of :</TextBlock>
-                    <ComboBox Margin="0,0,0,10"></ComboBox>
+                    <ComboBox x:Name="View" SelectionChanged="View_SelectionChanged" Margin="0,0,0,10"></ComboBox>
                     <TextBlock Margin="0,0,0,10" Foreground="White">Sort by :</TextBlock>
                     <CheckBox Margin="0,0,0,10" Foreground="White">Date (newest first)</CheckBox>
                     <CheckBox Margin="0,0,0,10" Foreground="White">Popularity (highest first)</CheckBox>
