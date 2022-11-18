@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TP2
@@ -22,6 +23,17 @@ namespace TP2
         public Marketplace()
         {
             InitializeComponent();
+            AfficherAutos();
+        }
+
+        private void AfficherAutos()
+        {
+            WrapPanelAutos.Children.Clear();
+            foreach (var auto in App.Current.Autos)
+            {
+                var productUserControl = new AutoUserControl(auto.Value);
+                WrapPanelAutos.Children.Add(productUserControl);
+            }
         }
     }
 }
