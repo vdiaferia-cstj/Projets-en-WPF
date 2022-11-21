@@ -48,6 +48,16 @@ namespace TP2
 
         };
 
+        public Dictionary<int, Friends> Friend { get => _friend; }
+        private readonly Dictionary<int, Friends> _friend = new Dictionary<int, Friends>()
+        {
+             {1,new Friends() {  FirstNameUser= "Tom", FirstNameFriend  ="Elliot"}},
+             {2,new Friends() {  FirstNameUser= "Tom", FirstNameFriend  ="Rachel"}},
+             {3,new Friends() {  FirstNameUser= "Tom", FirstNameFriend  ="Myriam"}},
+             {4,new Friends() {  FirstNameUser= "Elliot", FirstNameFriend  ="Rachel"}},
+             {5,new Friends() {  FirstNameUser= "Rachel", FirstNameFriend  ="Myriam"}},
+        };
+
      
 
     }
