@@ -4,20 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TP2"
-             mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="200">
-    <StackPanel Background="#FF2F2B2B" >
+             mc:Ignorable="d"
+             Height="275"
+             Width="210"
+             
+             >
+    <StackPanel Background="#FF2F2B2B" Margin="5" >
         
-        <TextBlock x:Name="AutoImage" Height="150" Width="150" Background="#FF2F2B2B" Foreground="White" />
-        <WrapPanel>
-            <TextBlock x:Name="AutoPrice"></TextBlock>
-            <TextBlock x:Name="AutoPublishDate"></TextBlock>
+        <Image Margin="4" x:Name="AutoImage" Height="180" Width="180"  />
+        <WrapPanel Margin="5">
+            <TextBlock FontWeight="Bold" Foreground="White" x:Name="AutoPrice">1000$</TextBlock>
+            <TextBlock Margin="85,0,0,0" x:Name="AutoPublishDate"  Foreground="#FF615D5D">11-19-2021</TextBlock>
 
         </WrapPanel>
-        <WrapPanel>
-        <TextBlock x:Name="AutoBrand"></TextBlock>
-         <TextBlock x:Name="AutoModel"></TextBlock>
+        <WrapPanel >
+            <TextBlock Foreground="White" x:Name="AutoYear" Margin="5,0,0,0">2014</TextBlock>
+            <TextBlock Foreground="White" x:Name="AutoBrand" Margin="5,0,0,0">Honda</TextBlock>
+            <TextBlock Foreground="White" x:Name="AutoModel" Margin="5,0,0,0"> Accord</TextBlock>
 
         </WrapPanel>
+        <TextBlock Margin="5,5,0,0" FontSize="9" FontStyle="Italic" Foreground="#FF615D5D">170k KM</TextBlock>
     </StackPanel>
 </UserControl>
