@@ -37,7 +37,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Margin="0,0,0,0" Background="#FF1F1F1F">
                     <TextBlock Margin="0,0,0,10" Foreground="White">Logged in as :</TextBlock>
-                    <ComboBox x:Name="LesUtilisateurs" SelectionChanged="LesUtilisateurs_SelectionChanged" ></ComboBox>
+                    <ComboBox  x:Name="LesUtilisateurs" SelectionChanged="LesUtilisateurs_SelectionChanged" ></ComboBox>
                     <Grid Background="#FF363836">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="90"></RowDefinition>

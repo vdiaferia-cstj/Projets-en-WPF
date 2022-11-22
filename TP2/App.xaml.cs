@@ -38,11 +38,11 @@ namespace TP2
         public Dictionary<int, User> Users { get => _user; }
         private readonly Dictionary<int, User> _user = new Dictionary<int, User>()
         {
-            {1,new User() { Image = "user1.jpg", FirstName= "Tom", LastName  ="Richards"}},
-            {2,new User() { Image = "user2.jpg", FirstName= "Elliot",LastName  ="Hart"}},
-            {3,new User() { Image = "user3.jpg", FirstName= "Rachel",LastName  ="Chapman"}},
-            {4,new User() { Image = "user4.jpg", FirstName= "Myriam",LastName  ="Leblanc"}},
-            {5,new User() { Image = "user5.jpg", FirstName= "Paul", LastName ="Burnham"}},
+            {1,new User() {Id=1, Image = "user1.jpg", FirstName= "Tom", LastName  ="Richards"}},
+            {2,new User() {Id=2, Image = "user2.jpg", FirstName= "Elliot",LastName  ="Hart"}},
+            {3,new User() {Id=3, Image = "user3.jpg", FirstName= "Rachel",LastName  ="Chapman"}},
+            {4,new User() {Id=4, Image = "user4.jpg", FirstName= "Myriam",LastName  ="Leblanc"}},
+            {5,new User() {Id=5, Image = "user5.jpg", FirstName= "Paul", LastName ="Burnham"}},
 
 
 
@@ -51,11 +51,11 @@ namespace TP2
         public Dictionary<int, Friends> Friend { get => _friend; }
         private readonly Dictionary<int, Friends> _friend = new Dictionary<int, Friends>()
         {
-             {1,new Friends() {  FirstNameUser= "Tom", FirstNameFriend  ="Elliot"}},
-             {2,new Friends() {  FirstNameUser= "Tom", FirstNameFriend  ="Rachel"}},
-             {3,new Friends() {  FirstNameUser= "Tom", FirstNameFriend  ="Myriam"}},
-             {4,new Friends() {  FirstNameUser= "Elliot", FirstNameFriend  ="Rachel"}},
-             {5,new Friends() {  FirstNameUser= "Rachel", FirstNameFriend  ="Myriam"}},
+             {1,new Friends() {UserId = 1,FriendId=2,  FirstNameUser= "Tom", FirstNameFriend  ="Elliot"}},
+             {2,new Friends() {UserId = 1,FriendId=3,  FirstNameUser= "Tom", FirstNameFriend  ="Rachel"}},
+             {3,new Friends() {UserId = 1,FriendId=4,  FirstNameUser= "Tom", FirstNameFriend  ="Myriam"}},
+             {4,new Friends() {UserId = 2,FriendId=3,  FirstNameUser= "Elliot", FirstNameFriend  ="Rachel"}},
+             {5,new Friends() {UserId = 3,FriendId=4,  FirstNameUser= "Rachel", FirstNameFriend  ="Myriam"}},
         };
 
      

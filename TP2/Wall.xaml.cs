@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,30 +49,32 @@ namespace TP2
             //}
 
 
-            foreach (var user in App.Current.Users.Values)
-            {
-                foreach (var friends in App.Current.Friend.Values)
-                {
-                    if (friends.FirstNameUser == user.FirstName)
-                    {
-                        View.Items.Add(friends.FirstNameFriend);
-                    }
-                }
-            }
         }
 
         public void FindFriends()
         {
-            foreach (var user in App.Current.Users.Values)
-            {
-                foreach (var friends in App.Current.Friend.Values)
+            //foreach (var user in App.Current.Users.Values)
+            //{
+            //    foreach (var friends in App.Current.Friend.Values)
+            //    {
+            //        if (friends.FirstNameUser == user.FirstName)
+            //        {
+            //            View.Items.Add(friends);
+            //        }
+            //    }
+            //}
+            View.Items.Clear();
+
+           
+                var friends = App.Current.Friend.Values.Where(x => x.UserId == LesUsers.Id); // JE PEUX FAIRE DES &&
+                foreach ( var reponse in friends)
                 {
-                    if (friends.FirstNameUser == user.FirstName)
-                    {
-                        View.Items.Add(friends);
-                    }
+                    View.Items.Add(reponse.FirstNameFriend);
                 }
-            }
+
+
+
+            
         }
 
         public void AfficherUser()
@@ -85,6 +88,7 @@ namespace TP2
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AfficherUser();
+            FindFriends();
 
             
         }
