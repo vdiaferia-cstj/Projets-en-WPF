@@ -34,17 +34,43 @@ namespace TP2
         {
             foreach (var user in App.Current.Users.Values)
             {
-              
+
                 LesUtilisateurs.Items.Add(user);
 
             }
 
-            View.Items.Add("All Users");
-            View.Items.Add("Friends");
-            foreach (var view in App.Current.Users)
+            //View.Items.Add("All Users");
+            //View.Items.Add("Friends");
+            //foreach (var view in App.Current.Users.Values)
+            //{
+
+            //    View.Items.Add(view);
+            //}
+
+
+            foreach (var user in App.Current.Users.Values)
             {
-          
-                View.Items.Add(view);
+                foreach (var friends in App.Current.Friend.Values)
+                {
+                    if (friends.FirstNameUser == user.FirstName)
+                    {
+                        View.Items.Add(friends.FirstNameFriend);
+                    }
+                }
+            }
+        }
+
+        public void FindFriends()
+        {
+            foreach (var user in App.Current.Users.Values)
+            {
+                foreach (var friends in App.Current.Friend.Values)
+                {
+                    if (friends.FirstNameUser == user.FirstName)
+                    {
+                        View.Items.Add(friends);
+                    }
+                }
             }
         }
 
@@ -52,12 +78,14 @@ namespace TP2
         {
 
             NomUser.Text = LesUsers.FirstName + " " + LesUsers.LastName;
+
             
         }
 
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AfficherUser();
+
             
         }
 
