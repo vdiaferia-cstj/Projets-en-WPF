@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="Marketplace" Height="450" Width="800">
+        Title="Marketplace" Height="680" Width="800" MinWidth="450"
+        MinHeight="680">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -24,49 +25,53 @@
         <Grid  Grid.Row="1" Background="#FF3E3A3A">
         <StackPanel Background="#FF3E3A3A" Margin="10,0,10,0">
             <TextBlock Foreground="White">Category</TextBlock>
-                <ListBox Height="20">
+                <ListBox Height="20" Margin="0,10,0,0">
                     
                 </ListBox>
-                <TextBlock Foreground="White">Sort by</TextBlock>
-                <RadioButton Foreground="White">Date (newest first)</RadioButton>
-                <RadioButton Foreground="White">Price (lowest first)</RadioButton>
-                <TextBlock Foreground="White">Price</TextBlock>
-                <WrapPanel>
+                <TextBlock Margin="0,10,0,0" Foreground="White">Sort by</TextBlock>
+                <RadioButton Margin="0,10,0,0" Foreground="White">Date (newest first)</RadioButton>
+                <RadioButton  Margin="0,10,0,0" Foreground="White">Price (lowest first)</RadioButton>
+                <TextBlock  Margin="0,10,0,0" Foreground="White">Price</TextBlock>
+                <WrapPanel Margin="0,10,0,0">
                 <TextBox Background="#FF887B7B" Width="70"></TextBox>
                     <TextBlock Foreground="White">to</TextBlock>
                 <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
 
-                </WrapPanel>
-                <TextBlock Foreground="White">Maker</TextBlock>
-                <ListBox Height="20">
+                </WrapPanel >
+                <TextBlock Margin="0,10,0,0" Foreground="White">Maker</TextBlock>
+                <ListBox Margin="0,10,0,0" Height="20">
 
                 </ListBox>
-                <TextBlock Foreground="White">Brand</TextBlock>
-                <ListBox Height="20">
+                <TextBlock Margin="0,10,0,0" Foreground="White">Brand</TextBlock>
+                <ListBox Margin="0,10,0,0" Height="20">
 
                 </ListBox>
-                <TextBlock Foreground="White">Year</TextBlock>
-                <WrapPanel>
+                <TextBlock Margin="0,10,0,0" Foreground="White">Year</TextBlock>
+                <WrapPanel Margin="0,10,0,0">
+                    <TextBox Background="#FF887B7B" Width="70"></TextBox>
+                    <TextBlock Foreground="White">to</TextBlock>
+                    <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
+
+                </WrapPanel >
+                <TextBlock Margin="0,10,0,0" Foreground="White">Mileage</TextBlock>
+                <WrapPanel Margin="0,10,0,0">
                     <TextBox Background="#FF887B7B" Width="70"></TextBox>
                     <TextBlock Foreground="White">to</TextBlock>
                     <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
 
                 </WrapPanel>
-                <TextBlock Foreground="White">Mileage</TextBlock>
-                <WrapPanel>
-                    <TextBox Background="#FF887B7B" Width="70"></TextBox>
-                    <TextBlock Foreground="White">to</TextBlock>
-                    <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
-
-                </WrapPanel>
-                <Button Background="#FF5D8AD4" Foreground="White" Margin="0,10,0,0" > Search </Button>
+                <Button  Background="#FF5D8AD4" Foreground="White" Margin="0,10,0,0" > Search </Button>
             </StackPanel>
         </Grid>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <WrapPanel x:Name="WrapPanelAutos">
-                <!--<local:AutoUserControl />-->
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="#FF463F3F">
+            
+            <WrapPanel  x:Name="WrapPanelAutos" >
+                <local:AutoUserControl Margin="10" />
             </WrapPanel>
+            
         </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>

@@ -21,17 +21,22 @@ namespace TP2
     public partial class AutoUserControl : UserControl
     {
         private Auto Auto;
+        public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
 
         public AutoUserControl() { InitializeComponent(); }
 
         public AutoUserControl(Auto auto)
         {
             InitializeComponent();
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(ApplicationBaseUri + "/Assets/Offers/Cars/" + auto.Image);
+            bitmap.EndInit();
 
             Auto = auto;
-            AutoImage.Text = auto.Image;
+            AutoImage.Source = bitmap;
             AutoPrice.Text = Convert.ToString(auto.Price) + "$";
-            AutoPublishDate.Text = Convert.ToString(auto.Date);
+            AutoPublishDate.Text = auto.Date.ToString("yyyy-MM-dd");
             AutoBrand.Text = auto.Maker;
             AutoModel.Text = auto.Brand;
 
