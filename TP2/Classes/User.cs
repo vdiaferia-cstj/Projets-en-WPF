@@ -15,10 +15,13 @@ namespace TP2
         public string Password;
         public string Email;
         public string ImageDeFond;
+        
+        
 
         public override string ToString()
         {
             return $"{FirstName}  {LastName}";
+
         }
     }
 
