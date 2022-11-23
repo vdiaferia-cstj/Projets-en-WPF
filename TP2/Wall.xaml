@@ -37,29 +37,39 @@
                 </Grid.RowDefinitions>
                 <StackPanel Margin="0,0,0,0" Background="#FF1F1F1F">
                     <TextBlock Margin="0,0,0,10" Foreground="White">Logged in as :</TextBlock>
-                    <ComboBox  x:Name="LesUtilisateurs" SelectionChanged="LesUtilisateurs_SelectionChanged" ></ComboBox>
-                    <Grid Background="#FF363836">
+                    <ComboBox SelectedIndex="0" x:Name="LesUtilisateurs" SelectionChanged="LesUtilisateurs_SelectionChanged" ></ComboBox>
+                    <Grid Background="#FF363836" Height="140">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="39*"/>
+                            <ColumnDefinition Width="13*"/>
+                            <ColumnDefinition Width="148*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="90"></RowDefinition>
-                          
-                        </Grid.RowDefinitions>
-                        <StackPanel>
-                            <TextBlock Margin="0,0,0,0" Foreground="White" x:Name="NomUser"></TextBlock>
-                        <TextBlock  Foreground="White" x:Name="lesFriends">Friends</TextBlock>
-                            <ComboBoxItem>
-                    
 
-                            </ComboBoxItem>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.ColumnSpan="3">
+                            <WrapPanel>
+                                <Image x:Name="taFace" Height="40" Width="40" />
+                            <TextBlock Foreground="White" x:Name="NomUser" Grid.ColumnSpan="3"/>
+                            </WrapPanel>
+                            <TextBlock  Foreground="White" x:Name="lesFriends">Friends</TextBlock>
+                            <ListBox x:Name="laComboBox" >
+
+
+                            </ListBox>
                         </StackPanel>
                     </Grid>
                     <TextBlock Margin="0,0,0,10" Foreground="White">View posts of :</TextBlock>
                     <ComboBox x:Name="View" SelectionChanged="View_SelectionChanged" Margin="0,0,0,10"></ComboBox>
                     <TextBlock Margin="0,0,0,10" Foreground="White">Sort by :</TextBlock>
-                    <CheckBox Margin="0,0,0,10" Foreground="White">Date (newest first)</CheckBox>
-                    <CheckBox Margin="0,0,0,10" Foreground="White">Popularity (highest first)</CheckBox>
+                    <RadioButton Margin="0,0,0,10" Foreground="White">Date (newest first)</RadioButton>
+                    <RadioButton Margin="0,0,0,10" Foreground="White">Popularity (highest first)</RadioButton>
 
                 </StackPanel>
             </Grid>
+            <local:AutoUserControl />
         </StackPanel>
     </Grid>
 

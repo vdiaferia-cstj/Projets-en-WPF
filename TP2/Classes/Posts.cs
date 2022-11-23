@@ -8,7 +8,18 @@ namespace TP2
 {
     public class Post
     {
-       
+        public int Id;
+        public string Firstname;
+        public string Title;
+        public string Description;
+        public string Image;
+        public DateTime DateAndTime;
+        public string Visibilty;
+        public int Like;
+        public int Love;
+        public int Sad;
+        public int Angry;
+
 
     }
 }

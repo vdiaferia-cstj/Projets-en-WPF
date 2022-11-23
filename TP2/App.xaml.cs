@@ -58,6 +58,22 @@ namespace TP2
              {5,new Friends() {UserId = 3,FriendId=4,  FirstNameUser= "Rachel", FirstNameFriend  ="Myriam"}},
         };
 
+        public Dictionary<int,Post> UnPost { get => _post; }
+        private readonly Dictionary<int, Post> _post = new Dictionary<int, Post>()
+        {
+            {1, new Post(){Id = 1,Title="Nice snack with a book", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {2, new Post(){Id = 2,Title="Relaxing night at the beach", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {3, new Post(){Id = 3,Title="Trekking in the woods", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {4, new Post(){Id = 4,Title="King of the world!", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {5, new Post(){Id = 5,Title="After work", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {6, new Post(){Id = 1,Title="New Zealand 2017", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="FriendsOnly" } },
+            {7, new Post(){Id = 1,Title="Sweden 2018", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {8, new Post(){Id = 1,Title="Internet cafe Sundays", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {9, new Post(){Id = 2,Title="Surprise!", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } },
+            {10, new Post(){Id = 2,Title="Secret painting", Description="Salut les potes", Image = "post1.jpg", DateAndTime = new DateTime(2021-11-20), Visibilty="Public" } }
+
+        };
+
      
 
     }
