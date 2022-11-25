@@ -68,8 +68,12 @@
                     <RadioButton Margin="0,0,0,10" Foreground="White">Popularity (highest first)</RadioButton>
 
                 </StackPanel>
+                <StackPanel Grid.Column="1" x:Name="StackPanelInfo">
+
+                </StackPanel>
             </Grid>
-            <local:AutoUserControl />
+            
+
         </StackPanel>
     </Grid>
 

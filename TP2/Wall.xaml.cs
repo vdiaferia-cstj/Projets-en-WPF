@@ -31,6 +31,7 @@ namespace TP2
         {
             InitializeComponent();
             FindUser();
+            DisplayPost();
           
         }
 
@@ -93,6 +94,16 @@ namespace TP2
 
 
             
+        }
+
+        public void DisplayPost() {
+            StackPanelInfo.Children.Clear();
+            foreach (var posts in App.Current.UnPost)
+            {
+                var postOnTheWall = new PostWallUserControl(posts.Value);
+                StackPanelInfo.Children.Add(postOnTheWall);
+            }
+
         }
 
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
