@@ -20,7 +20,7 @@ namespace TP2
         private readonly Dictionary<int, Auto> _autos = new Dictionary<int, Auto>()
         {
             {1,new Auto() { Image = "car1.jpg", Date = new DateTime(2021,11,19),Price = 6000, Maker = "Honda",Brand = "Accord",Year = 2014, Odometer = 170  }},
-            {2,new Auto() { Image = "car2.jpg", Date = new DateTime(2021,11,19),Price = 5000, Maker = "Toyota",Brand = "Camry",Year = 2015, Odometer = 200  }},
+            {2,new Auto() { Image = "car2.jpg", Date = new DateTime(2021,11,1),Price = 5000, Maker = "Toyota",Brand = "Camry",Year = 2015, Odometer = 200  }},
             {3, new Auto(){ Image = "car3.jpg", Date = new DateTime(2021,11,21),Price = 8000, Maker="Nissan",Brand="Leaf",Year = 2013,Odometer= 210}},
             {4, new Auto(){ Image = "car4.jpg", Date = new DateTime(2021,11,21),Price = 10000, Maker="Toyota",Brand="Yaris",Year = 2021,Odometer= 20}},
             {5, new Auto(){ Image = "car5.jpg", Date = new DateTime(2021,11,23),Price = 1000, Maker="Honda",Brand="Civic",Year = 2001,Odometer= 350}},
