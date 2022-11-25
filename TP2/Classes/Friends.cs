@@ -8,7 +8,9 @@ namespace TP2
 {
     public class Friends
     {
-        public int Id;
+
+        public int UserId;
+        public int FriendId;
         public string FirstNameUser;
         public string FirstNameFriend;
 
