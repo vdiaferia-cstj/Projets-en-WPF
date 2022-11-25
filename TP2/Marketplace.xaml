@@ -25,17 +25,19 @@
         <Grid  Grid.Row="1" Background="#FF3E3A3A">
         <StackPanel Background="#FF3E3A3A" Margin="10,0,10,0">
             <TextBlock Foreground="White">Category</TextBlock>
-                <ListBox Height="20" Margin="0,10,0,0">
-                    
-                </ListBox>
+                <ComboBox x:Name="comboBoxCategory"  Height="20" Margin="0,10,0,0">
+                    <ComboBoxItem>Appliances</ComboBoxItem>
+                    <ComboBoxItem >Cars</ComboBoxItem>
+                    <ComboBoxItem>Property Rentals</ComboBoxItem>
+                </ComboBox>
                 <TextBlock Margin="0,10,0,0" Foreground="White">Sort by</TextBlock>
-                <RadioButton Margin="0,10,0,0" Foreground="White">Date (newest first)</RadioButton>
-                <RadioButton  Margin="0,10,0,0" Foreground="White">Price (lowest first)</RadioButton>
+                <RadioButton Margin="0,10,0,0" x:Name="SortDate" Foreground="White">Date (newest first)</RadioButton>
+                <RadioButton  Margin="0,10,0,0" x:Name="SortPrice" Foreground="White">Price (lowest first)</RadioButton>
                 <TextBlock  Margin="0,10,0,0" Foreground="White">Price</TextBlock>
                 <WrapPanel Margin="0,10,0,0">
-                <TextBox Background="#FF887B7B" Width="70"></TextBox>
+                <TextBox Background="#FF887B7B" x:Name="Min" Margin="0,0,5,0" Width="70"></TextBox>
                     <TextBlock Foreground="White">to</TextBlock>
-                <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
+                <TextBox Background="#FF887B7B" x:Name="Max" Margin="5,0,0,0" Width="70"></TextBox>
 
                 </WrapPanel >
                 <TextBlock Margin="0,10,0,0" Foreground="White">Maker</TextBlock>
@@ -60,7 +62,7 @@
                     <TextBox Background="#FF887B7B" Margin="10,0,0,0" Width="70"></TextBox>
 
                 </WrapPanel>
-                <Button  Background="#FF5D8AD4" Foreground="White" Margin="0,10,0,0" > Search </Button>
+                <Button  Background="#FF5D8AD4" Foreground="White" Margin="0,10,0,0" Click="Button_Click" > Search </Button>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1" Grid.Column="1">
