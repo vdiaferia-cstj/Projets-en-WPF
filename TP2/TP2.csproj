@@ -24,11 +24,38 @@
     <None Remove="Assets\Offers\Cars\car7.jpg" />
     <None Remove="Assets\Offers\Cars\car8.jpg" />
     <None Remove="Assets\Offers\Cars\car9.jpg" />
+    <None Remove="Assets\Posts\post1.jpg" />
+    <None Remove="Assets\Posts\post10.jpg" />
+    <None Remove="Assets\Posts\post11.jpg" />
+    <None Remove="Assets\Posts\post12.jpg" />
+    <None Remove="Assets\Posts\post2.jpg" />
+    <None Remove="Assets\Posts\post3.jpg" />
+    <None Remove="Assets\Posts\post4.jpg" />
+    <None Remove="Assets\Posts\post5.jpg" />
+    <None Remove="Assets\Posts\post6.jpg" />
+    <None Remove="Assets\Posts\post7.jpg" />
+    <None Remove="Assets\Posts\post8.jpg" />
+    <None Remove="Assets\Posts\post9.jpg" />
     <None Remove="Assets\Users\user1.jpg" />
     <None Remove="Assets\Users\user2.jpg" />
     <None Remove="Assets\Users\user3.jpg" />
     <None Remove="Assets\Users\user4.jpg" />
     <None Remove="Assets\Users\user5.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Posts\post1.jpg" />
+    <Resource Include="Assets\Posts\post10.jpg" />
+    <Resource Include="Assets\Posts\post11.jpg" />
+    <Resource Include="Assets\Posts\post12.jpg" />
+    <Resource Include="Assets\Posts\post2.jpg" />
+    <Resource Include="Assets\Posts\post3.jpg" />
+    <Resource Include="Assets\Posts\post4.jpg" />
+    <Resource Include="Assets\Posts\post5.jpg" />
+    <Resource Include="Assets\Posts\post6.jpg" />
+    <Resource Include="Assets\Posts\post7.jpg" />
+    <Resource Include="Assets\Posts\post8.jpg" />
+    <Resource Include="Assets\Posts\post9.jpg" />
   </ItemGroup>
 
   <ItemGroup>

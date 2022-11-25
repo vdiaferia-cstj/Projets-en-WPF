@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="TP2.PostWallUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TP2"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="800">
+    <StackPanel Background="#FF272727">
+        <TextBlock x:Name="Firstname"></TextBlock>
+        <Image x:Name="Publication" Height="400" Width="800" />
+        <WrapPanel>
+            <Button x:Name="like"></Button>
+            <Button x:Name="Heart"></Button>
+            <Button x:Name="Sad"></Button>
+            <Button x:Name="Angry"></Button>
+        </WrapPanel>
+        <TextBlock x:Name="Title"></TextBlock>
+        <TextBlock x:Name="Date"></TextBlock>
+        <TextBlock x:Name="Description"></TextBlock>
+
+    </StackPanel>
+</UserControl>
