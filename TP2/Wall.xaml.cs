@@ -126,6 +126,11 @@ namespace TP2
         {
 
             var theUser = App.Current.UnPost.Values.Where(x => x.Id == ModeView.Id);
+            foreach (var part1 in theUser)
+            {
+              //  var lesFriend = App.Current.Users.
+            }
+            
             StackPanelInfo.Children.Clear();
            
                 foreach (var postOfTom in theUser)
@@ -133,6 +138,8 @@ namespace TP2
                     var postOnTheWall = new PostWallUserControl(postOfTom);
                     StackPanelInfo.Children.Add(postOnTheWall);
                 }
+
+            
 
 
 
