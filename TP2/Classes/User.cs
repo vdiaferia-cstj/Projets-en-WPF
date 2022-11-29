@@ -15,6 +15,7 @@ namespace TP2
         public string Password;
         public string Email;
         public string ImageDeFond;
+        public List<int> Fr = new List<int>();
         
         
 

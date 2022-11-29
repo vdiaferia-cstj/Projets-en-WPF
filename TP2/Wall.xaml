@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP2"
         mc:Ignorable="d"
-        Title="Wall" Height="450" Width="800">
+        Title="Wall" Height="500" Width="800">
     <Grid Background="#FF292525">
 
         <Grid.ColumnDefinitions>
@@ -64,13 +64,16 @@
                     <TextBlock Margin="0,0,0,10" Foreground="White">View posts of :</TextBlock>
                     <ComboBox x:Name="View" SelectionChanged="View_SelectionChanged" Margin="0,0,0,10"></ComboBox>
                     <TextBlock Margin="0,0,0,10" Foreground="White">Sort by :</TextBlock>
-                    <RadioButton Margin="0,0,0,10" Foreground="White">Date (newest first)</RadioButton>
+                    <RadioButton Click="parDatePoto_Click" x:Name="parDatePoto" Margin="0,0,0,10" Foreground="White">Date (newest first)</RadioButton>
                     <RadioButton Margin="0,0,0,10" Foreground="White">Popularity (highest first)</RadioButton>
 
                 </StackPanel>
-                <StackPanel Grid.Column="1" x:Name="StackPanelInfo">
-
+                <ScrollViewer Grid.Column="1">
+                    <StackPanel Grid.Column="1" x:Name="StackPanelInfo">
+                        
+                 
                 </StackPanel>
+                </ScrollViewer>
             </Grid>
             
 

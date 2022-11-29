@@ -7,17 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="800">
     <StackPanel Background="#FF272727">
-        <TextBlock x:Name="Firstname"></TextBlock>
+        <TextBlock Foreground="White" x:Name="Firstname">Simon</TextBlock>
         <Image x:Name="Publication" Height="400" Width="800" />
         <WrapPanel>
-            <Button x:Name="like"></Button>
-            <Button x:Name="Heart"></Button>
-            <Button x:Name="Sad"></Button>
-            <Button x:Name="Angry"></Button>
-        </WrapPanel>
-        <TextBlock x:Name="Title"></TextBlock>
-        <TextBlock x:Name="Date"></TextBlock>
-        <TextBlock x:Name="Description"></TextBlock>
+            <Button Height="50" Margin="0,0,10,0" Width="50" Foreground="White" x:Name="like">
+                <Image Source="/Assets/Icons/angry.png"></Image>
+            </Button>
+            <Button Height="50" Margin="0,0,10,0" Width="50" Foreground="White" x:Name="Heart">
+                <Image Source="/Assets/Icons/like.png"></Image>
+            </Button>
+            <Button Height="50" Margin="0,0,10,0" Width="50" Foreground="White" x:Name="Sad">
+                <Image Source="/Assets/Icons/love.png"></Image>
+            </Button>
+            <Button Height="50" Margin="0,0,10,0" Width="50" Foreground="White"  x:Name="Angry">
+                <Image Source="/Assets/Icons/sad.png"></Image>
+            </Button>
+        </WrapPanel >
+        <TextBlock Foreground="White" x:Name="Title">Title</TextBlock>
+        <TextBlock Foreground="White" x:Name="Date">Date</TextBlock>
+        <TextBlock Foreground="White" x:Name="Description">Description</TextBlock>
 
     </StackPanel>
 </UserControl>
