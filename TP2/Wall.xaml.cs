@@ -32,7 +32,7 @@ namespace TP2
             InitializeComponent();
             FindUser();
             DisplayPost();
-          
+            parDatePoto.IsChecked = true;
         }
 
         public void FindUser()
@@ -106,17 +106,57 @@ namespace TP2
 
         }
 
+        private void DisplayPostByDate()
+        {
+         
+                StackPanelInfo.Children.Clear();
+                var date = App.Current.UnPost.Values.OrderBy(x => x.DateAndTime);
+                foreach (var trie in date)
+                {
+                    var postOnTheWall = new PostWallUserControl(trie);
+                    StackPanelInfo.Children.Add(postOnTheWall);
+                }
+            
+              
+            
+          
+        }
+
+        private void DisplayByUser()
+        {
+
+            var theUser = App.Current.UnPost.Values.Where(x => x.Id == ModeView.Id);
+            StackPanelInfo.Children.Clear();
+           
+                foreach (var postOfTom in theUser)
+                {
+                    var postOnTheWall = new PostWallUserControl(postOfTom);
+                    StackPanelInfo.Children.Add(postOnTheWall);
+                }
+
+
+
+            
+        
+        }
+
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AfficherUser();
             FindFriends();
+            DisplayPostByDate();
 
             
         }
 
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          
+            DisplayByUser();
+        }
+
+        private void parDatePoto_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayPostByDate();
         }
     }
 }
