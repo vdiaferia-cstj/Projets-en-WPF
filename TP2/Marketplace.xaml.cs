@@ -25,8 +25,47 @@ namespace TP2
             InitializeComponent();
             comboBoxCategory.SelectionChanged += comboBoxCategory_SelectionChanged;
             comboBoxCategory.SelectedIndex = 1;
-        }      
+            InitialiserMaker();
+            InitialiserBrand();
 
+            comboMaker.SelectionChanged += ComboMaker_SelectionChanged;
+        }
+
+        private void ComboMaker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+             
+             
+           var cars = App.Current.Autos.Values.Where(x => x.Maker == comboMaker.Text);
+            var brands = cars.Select(x => x.Brand).Distinct();
+             
+             foreach (var brand in brands)
+             {
+                 comboMaker.Items.Add(brand);
+             }
+             
+        }
+
+        private void InitialiserMaker()
+        {
+            IEnumerable<string> makers;
+            makers = App.Current.Autos.Values.Select(x => x.Maker);
+            makers = makers.Distinct();
+            foreach (var maker in makers)
+            {
+                comboMaker.Items.Add(maker); 
+            }
+        }
+        private void InitialiserBrand()
+        {
+            IEnumerable<string> brands;
+            brands = App.Current.Autos.Values.Select(x => x.Brand);
+            brands = brands.Distinct();
+            foreach (var brand in brands)
+            {
+                comboBrand.Items.Add(brand);
+            }
+            
+        }
         private void AfficherAppliances()
         {
             WrapPanelAutos.Children.Clear();
@@ -67,34 +106,36 @@ namespace TP2
             {
                 WrapPanelAutos.Children.Clear();
                 IEnumerable<Auto> autos;
+                autos = App.Current.Autos.Values;
+
                 if (SortDate.IsChecked == true)
-                {
-                    
-                     autos = App.Current.Autos.Values.OrderBy(x => x.Date);
-                    foreach (var auto in autos)
-                    {
-                        var productUserControl = new AutoUserControl(auto);
-                        WrapPanelAutos.Children.Add(productUserControl);
-                    }
+                {    
+                     autos = autos.OrderByDescending(x => x.Date);
                 }
                 if (SortPrice.IsChecked == true)
                 {
-                    
-                     autos = App.Current.Autos.Values.OrderBy(x => x.Price);
-                    foreach (var auto in autos)
-                    {
-                        var productUserControl = new AutoUserControl(auto);
-                        WrapPanelAutos.Children.Add(productUserControl);
-                    }
+                     autos = autos.OrderBy(x => x.Price);
                 }
 
-                if (Min != null & Max != null)
+                if (Min.Text != "" && Max.Text != "")
                 {
-
+                    autos = autos.Where(x => x.Price >= Convert.ToDouble( Min.Text) && x.Price <= Convert.ToDouble(Max.Text));                   
                 }
-                else if (Min != null  )
+                else if (Min.Text != "")
                 {
+                    autos = autos.Where(x => x.Price >= Convert.ToDouble(Min.Text));
+                }
+                else if (Max.Text != "")
+                {
+                    autos = autos.Where(x => x.Price <= Convert.ToDouble(Max.Text));
+                }
 
+
+
+                foreach (var auto in autos)
+                {
+                    var productUserControl = new AutoUserControl(auto);
+                    WrapPanelAutos.Children.Add(productUserControl);
                 }
             }
             

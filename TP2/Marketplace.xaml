@@ -41,13 +41,13 @@
 
                 </WrapPanel >
                 <TextBlock Margin="0,10,0,0" Foreground="White">Maker</TextBlock>
-                <ListBox Margin="0,10,0,0" Height="20">
+                <ComboBox x:Name="comboMaker" Margin="0,10,0,0" Height="20">
 
-                </ListBox>
+                </ComboBox>
                 <TextBlock Margin="0,10,0,0" Foreground="White">Brand</TextBlock>
-                <ListBox Margin="0,10,0,0" Height="20">
+                <ComboBox x:Name="comboBrand" Margin="0,10,0,0" Height="20">
 
-                </ListBox>
+                </ComboBox>
                 <TextBlock Margin="0,10,0,0" Foreground="White">Year</TextBlock>
                 <WrapPanel Margin="0,10,0,0">
                     <TextBox Background="#FF887B7B" Width="70"></TextBox>
