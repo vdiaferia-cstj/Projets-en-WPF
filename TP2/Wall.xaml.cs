@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,7 +21,7 @@ namespace TP2
     /// </summary>
     public partial class Wall : Window
     {
-        
+        public User user = new User();
         public User LesUsers => (User)LesUtilisateurs.SelectedItem;
         public User ModeView => (User)View.SelectedItem;
 
@@ -29,10 +30,16 @@ namespace TP2
 
         public Wall()
         {
+           
             InitializeComponent();
             FindUser();
             DisplayPost();
-            parDatePoto.IsChecked = true;
+            //parDatePoto.IsChecked = true;
+            if (parDatePoto.IsChecked == true)
+            {
+                DisplayPostByDate();
+            }
+           
         }
 
         public void FindUser()
@@ -46,11 +53,15 @@ namespace TP2
 
             View.Items.Add("All Users");
             View.Items.Add("Friends");
+
             foreach (var view in App.Current.Users.Values)
             {
 
                 View.Items.Add(view);
             }
+
+            
+
 
 
         }
@@ -59,21 +70,19 @@ namespace TP2
         {
 
             laComboBox.Items.Clear();
+            //View.Items.Clear();
 
-
-            var friends = App.Current.Friend.Values.Where(x => x.UserId == LesUsers.Id); 
-            foreach (var reponse in friends)
+            foreach (var userA in App.Current.Users.Values)
             {
-                laComboBox.Items.Add(reponse.FirstNameFriend); // remplacer VIEW par le nom de la liste 
+                foreach ( var userB in userA.Fr)
+                {
+                    if (LesUsers.Id == userB)
+                    {
+                        laComboBox.Items.Add(userA.FirstName + " " + userA.LastName);
+                    }
+
+                }
             }
-            var friendsAgain = App.Current.Friend.Values.Where(x => x.FriendId == LesUsers.Id);
-            foreach (var reponse in friendsAgain)
-            {
-                laComboBox.Items.Add(reponse.FirstNameUser);  // remplacer VIEW par le nom de la liste
-
-            }
-
-
         }
 
         public void AfficherUser()
@@ -122,42 +131,63 @@ namespace TP2
           
         }
 
-        private void DisplayByUser()
+        private async void DisplayByUser()
+        {
+            if (View.SelectedItem == "Friends")
+            {
+                
+            }
+
+            if (View.SelectedItem == "All Users")
+            {
+
+            }
+
+            if (View.SelectedItem!="Friends" && View.SelectedItem != "All Users")
+            {
+
+
+            var theUser = App.Current.UnPost.Values.Where(x => x.IdUser == ModeView.Id);
+
+
+
+            StackPanelInfo.Children.Clear();
+
+            foreach (var postOfTom in theUser)
+            {
+                var postOnTheWall = new PostWallUserControl(postOfTom);
+                StackPanelInfo.Children.Add(postOnTheWall);
+            }
+
+
+                //foreach (var part1 in theUser)
+                //{
+                //    //  var lesFriend = App.Current.Users.
+                //}
+
+            }
+
+
+
+        }
+
+        private void DisplayByFriends()
         {
 
-            var theUser = App.Current.UnPost.Values.Where(x => x.Id == ModeView.Id);
-            foreach (var part1 in theUser)
-            {
-              //  var lesFriend = App.Current.Users.
-            }
-            
-            StackPanelInfo.Children.Clear();
-           
-                foreach (var postOfTom in theUser)
-                {
-                    var postOnTheWall = new PostWallUserControl(postOfTom);
-                    StackPanelInfo.Children.Add(postOnTheWall);
-                }
-
-            
-
-
-
-            
-        
         }
 
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AfficherUser();
             FindFriends();
-            DisplayPostByDate();
+            
 
             
         }
 
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             DisplayByUser();
         }
 

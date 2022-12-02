@@ -58,29 +58,21 @@ namespace TP2
 
         // ENLEVER TOUT LES NOMS DANS LA BASE DE DONNEE
         // DE FRIENDS
-        public Dictionary<int, Friends> Friend { get => _friend; }
-        private readonly Dictionary<int, Friends> _friend = new Dictionary<int, Friends>()
-        {
-             {1,new Friends() {UserId = 1,FriendId=2,  FirstNameUser= "Tom", FirstNameFriend  ="Elliot"}},
-             {2,new Friends() {UserId = 1,FriendId=3,  FirstNameUser= "Tom", FirstNameFriend  ="Rachel"}},
-             {3,new Friends() {UserId = 1,FriendId=4,  FirstNameUser= "Tom", FirstNameFriend  ="Myriam"}},
-             {4,new Friends() {UserId = 2,FriendId=3,  FirstNameUser= "Elliot", FirstNameFriend  ="Rachel"}},
-             {5,new Friends() {UserId = 3,FriendId=4,  FirstNameUser= "Rachel", FirstNameFriend  ="Myriam"}},
-        };
+
 
         public Dictionary<int,Post> UnPost { get => _post; }
         private readonly Dictionary<int, Post> _post = new Dictionary<int, Post>()
         {
-            {1, new Post(){Id = 1,Title="Nice snack with a book", Description="Salut les potes", Image = "/Assets/Posts/post1.jpg", DateAndTime = new DateTime(2021,11,21), Visibilty="Public" } },
-            {2, new Post(){Id = 2,Title="Relaxing night at the beach", Description="Salut les potes", Image = "/Assets/Posts/post2.jpg", DateAndTime = new DateTime(2021,11,22), Visibilty="Public" } },
-            {3, new Post(){Id = 3,Title="Trekking in the woods", Description="Salut les potes", Image = "/Assets/Posts/post3.jpg", DateAndTime = new DateTime(2021,11,23), Visibilty="Public" } },
-            {4, new Post(){Id = 4,Title="King of the world!", Description="Salut les potes", Image = "/Assets/Posts/post4.jpg", DateAndTime = new DateTime(2021,11,24), Visibilty="Public" } },
-            {5, new Post(){Id = 5,Title="After work", Description="Salut les potes", Image = "/Assets/Posts/post5.jpg", DateAndTime = new DateTime(2021,11,25), Visibilty="Public" } },
-            {6, new Post(){Id = 1,Title="New Zealand 2017", Description="Salut les potes", Image = "/Assets/Posts/post6.jpg", DateAndTime = new DateTime(2021,11,19), Visibilty="FriendsOnly" } },
-            {7, new Post(){Id = 1,Title="Sweden 2018", Description="Salut les potes", Image = "/Assets/Posts/post7.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } },
-            {8, new Post(){Id = 1,Title="Internet cafe Sundays", Description="Salut les potes", Image = "/Assets/Posts/post8.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } },
-            {9, new Post(){Id = 2,Title="Surprise!", Description="Salut les potes", Image = "/Assets/Posts/post9.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } },
-            {10, new Post(){Id = 2,Title="Secret painting", Description="Salut les potes", Image = "/Assets/Posts/post10.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } }
+            {1, new Post(){Id=1, IdUser = 1,Title="Nice snack with a book", Description="Salut les potes", Image = "/Assets/Posts/post1.jpg", DateAndTime = new DateTime(2021,11,21), Visibilty="Public" } },
+            {2, new Post(){Id=2, IdUser = 2,Title="Relaxing night at the beach", Description="Salut les potes", Image = "/Assets/Posts/post2.jpg", DateAndTime = new DateTime(2021,11,22), Visibilty="Public" } },
+            {3, new Post(){Id=3, IdUser = 3,Title="Trekking in the woods", Description="Salut les potes", Image = "/Assets/Posts/post3.jpg", DateAndTime = new DateTime(2021,11,23), Visibilty="Public" } },
+            {4, new Post(){Id=4, IdUser = 4,Title="King of the world!", Description="Salut les potes", Image = "/Assets/Posts/post4.jpg", DateAndTime = new DateTime(2021,11,24), Visibilty="Public" } },
+            {5, new Post(){Id=5, IdUser = 5,Title="After work", Description="Salut les potes", Image = "/Assets/Posts/post5.jpg", DateAndTime = new DateTime(2021,11,25), Visibilty="Public" } },
+            {6, new Post(){Id=6, IdUser = 1,Title="New Zealand 2017", Description="Salut les potes", Image = "/Assets/Posts/post6.jpg", DateAndTime = new DateTime(2021,11,19), Visibilty="FriendsOnly" } },
+            {7, new Post(){Id=7, IdUser = 1,Title="Sweden 2018", Description="Salut les potes", Image = "/Assets/Posts/post7.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } },
+            {8, new Post(){Id=8, IdUser = 1,Title="Internet cafe Sundays", Description="Salut les potes", Image = "/Assets/Posts/post8.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } },
+            {9, new Post(){Id=9, IdUser = 2,Title="Surprise!", Description="Salut les potes", Image = "/Assets/Posts/post9.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } },
+            {10,new Post(){Id=10, IdUser = 2,Title="Secret painting", Description="Salut les potes", Image = "/Assets/Posts/post10.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public" } }
 
         };
 
