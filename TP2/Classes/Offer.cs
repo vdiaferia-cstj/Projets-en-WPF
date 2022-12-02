@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP2.Classes
+namespace TP2
 {
     public class Offer
     {
-        public double Offre;
+        public double Prix;
         public int Id;
         public int IdUser;
-        //Liste de ses amis?
+        public double Price;
+        public DateTime Date;
+        public string Image;
         public string Titre;
         public string Description;
-        public string Image;
+        public string Category;
     }
 }
