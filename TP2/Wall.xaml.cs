@@ -124,15 +124,28 @@ namespace TP2
 
         private void DisplayByUser()
         {
-
-            var theUser = App.Current.UnPost.Values.Where(x => x.Id == ModeView.Id);
             StackPanelInfo.Children.Clear();
-           
-                foreach (var postOfTom in theUser)
+          
+            var theUser = App.Current.UnPost.Values.Where(x => x.Id == ModeView.Id);
+            foreach (var part1 in theUser)
+            {
+                var theFriend = App.Current.Friend.Values.Where(x => x.FriendId == part1.Id);
+                foreach (var part2 in theFriend)
                 {
-                    var postOnTheWall = new PostWallUserControl(postOfTom);
-                    StackPanelInfo.Children.Add(postOnTheWall);
+                    //var postOnTheWall = new PostWallUserControl(part2);
+                    //StackPanelInfo.Children.Add(postOnTheWall);
                 }
+            }
+            
+      
+           
+            //    foreach (var postOfTom in theUser)
+            //    {
+            //    var postOnTheWall = new PostWallUserControl(postOfTom);
+            //    StackPanelInfo.Children.Add(postOnTheWall);
+            //}
+
+            
 
 
 
