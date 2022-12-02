@@ -33,14 +33,14 @@ namespace TP2
 
         private void ComboMaker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-             
-             
-           var cars = App.Current.Autos.Values.Where(x => x.Maker == comboMaker.Text);
+           
+
+           var cars = App.Current.Autos.Values.Where(x => x.Maker == comboMaker.SelectedItem.ToString());
             var brands = cars.Select(x => x.Brand).Distinct();
-             
+            comboBrand.Items.Clear();
              foreach (var brand in brands)
              {
-                 comboMaker.Items.Add(brand);
+                 comboBrand.Items.Add(brand);
              }
              
         }
@@ -50,6 +50,7 @@ namespace TP2
             IEnumerable<string> makers;
             makers = App.Current.Autos.Values.Select(x => x.Maker);
             makers = makers.Distinct();
+
             foreach (var maker in makers)
             {
                 comboMaker.Items.Add(maker); 
@@ -64,6 +65,8 @@ namespace TP2
             {
                 comboBrand.Items.Add(brand);
             }
+
+
             
         }
         private void AfficherAppliances()
@@ -107,7 +110,7 @@ namespace TP2
                 WrapPanelAutos.Children.Clear();
                 IEnumerable<Auto> autos;
                 autos = App.Current.Autos.Values;
-
+                //radio button
                 if (SortDate.IsChecked == true)
                 {    
                      autos = autos.OrderByDescending(x => x.Date);
@@ -116,7 +119,7 @@ namespace TP2
                 {
                      autos = autos.OrderBy(x => x.Price);
                 }
-
+                //price
                 if (Min.Text != "" && Max.Text != "")
                 {
                     autos = autos.Where(x => x.Price >= Convert.ToDouble( Min.Text) && x.Price <= Convert.ToDouble(Max.Text));                   
@@ -129,8 +132,42 @@ namespace TP2
                 {
                     autos = autos.Where(x => x.Price <= Convert.ToDouble(Max.Text));
                 }
-
-
+                //maker
+                if (comboMaker.SelectedIndex != -1)
+                {
+                    autos = autos.Where(x => x.Maker == comboMaker.SelectedItem.ToString());
+                }
+                //brand
+                if (comboBrand.SelectedIndex != -1)
+                {
+                    autos = autos.Where(x => x.Brand == comboBrand.SelectedItem.ToString());
+                }
+                //year
+                if (yearMin.Text != "" && yearMax.Text != "")
+                {
+                    autos = autos.Where(x => x.Year >= Convert.ToInt32(yearMin.Text) && x.Year <= Convert.ToInt32(yearMax.Text));
+                }
+                else if (yearMin.Text != "")
+                {
+                    autos = autos.Where(x => x.Year >= Convert.ToInt32(yearMin.Text));
+                }
+                else if (yearMax.Text != "")
+                {
+                    autos = autos.Where(x => x.Year <= Convert.ToInt32(yearMax.Text));
+                }
+                //mileage
+                if (mileageMin.Text != "" && mileageMax.Text != "")
+                {
+                    autos = autos.Where(x => x.Odometer >= Convert.ToInt32(mileageMin.Text) && x.Odometer <= Convert.ToInt32(mileageMax.Text));
+                }
+                else if (mileageMin.Text != "")
+                {
+                    autos = autos.Where(x => x.Odometer >= Convert.ToInt32(mileageMin.Text));
+                }
+                else if (mileageMax.Text != "")
+                {
+                    autos = autos.Where(x => x.Odometer <= Convert.ToInt32(mileageMax.Text));
+                }
 
                 foreach (var auto in autos)
                 {
@@ -140,5 +177,7 @@ namespace TP2
             }
             
         }
+
+      
     }
 }

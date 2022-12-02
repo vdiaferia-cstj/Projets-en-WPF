@@ -37,6 +37,8 @@ namespace TP2
             AutoImage.Source = bitmap;
             AutoPrice.Text = Convert.ToString(auto.Price) + "$";
             AutoPublishDate.Text = auto.Date.ToString("yyyy-MM-dd");
+            AutoYear.Text = Convert.ToString(auto.Year);
+            AutoMileage.Text = Convert.ToString(auto.Odometer)+ "k" + " KM";
             AutoBrand.Text = auto.Maker;
             AutoModel.Text = auto.Brand;
 
