@@ -24,6 +24,12 @@ namespace TP2
             return $"{FirstName}  {LastName}";
 
         }
+
+        public IEnumerable<User> Friends => Fr.Select(x => App.Current.Users[x]);
+
+        public IEnumerable<Post> Post => App.Current.UnPost.Values.Where(x => x.IdUser ==  Id);
+
+        public IEnumerable<Post> UserPost => Friends.SelectMany(x => x.Post);
     }
 
 }

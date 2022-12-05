@@ -23,6 +23,6 @@
             <TextBlock Foreground="White" x:Name="AutoModel" Margin="5,0,0,0"> Accord</TextBlock>
 
         </WrapPanel>
-        <TextBlock Margin="5,5,0,0" FontSize="9" FontStyle="Italic" Foreground="#FF615D5D">170k KM</TextBlock>
+        <TextBlock Margin="5,5,0,0" FontSize="9" FontStyle="Italic" x:Name="AutoMileage" Foreground="#FF615D5D">170k KM</TextBlock>
     </StackPanel>
 </UserControl>

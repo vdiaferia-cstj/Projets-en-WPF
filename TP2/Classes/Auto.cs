@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace TP2
 {
-    public class Auto
+    public class Auto : Offer
     {
-        public string Image;
-        public DateTime Date;
-        public double Price;
         public string Maker;
         public string Brand;
         public int Year;
