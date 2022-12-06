@@ -30,12 +30,16 @@ namespace TP2
 
 
             Post_it = post;
-            Firstname.Text = post.Firstname;
+            
             Publication.Source =  new BitmapImage(App.getUri(post.Image));
             Title.Text = post.Title;
             Date.Text = post.DateAndTime.ToString("yyyy-MM-dd");
             Description.Text = post.Description;
 
+            if (post.Reaction[1] == "angry")
+            {
+                angry.IsChecked = true;
+            }
 
 
         }

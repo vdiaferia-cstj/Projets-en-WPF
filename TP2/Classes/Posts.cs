@@ -18,12 +18,7 @@ namespace TP2
         public DateTime DateAndTime;
         public string Visibilty;
 
-
-        public int Like;
-        public int Love;
-        public int Sad;
-        public int Angry;
-
+        public Dictionary<int,string> Reaction = new Dictionary<int, string>();
 
     }
 }
