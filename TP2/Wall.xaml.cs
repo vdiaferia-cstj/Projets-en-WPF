@@ -133,13 +133,31 @@ namespace TP2
 
         private async void DisplayByUser()
         {
+            User user =new User();
             if (View.SelectedItem == "Friends")
             {
-                
+                StackPanelInfo.Children.Clear();
+                var qqch = LesUsers.UserPost;
+                foreach (var postFriend in qqch)
+                {
+                    var post = new PostWallUserControl(postFriend);
+                    StackPanelInfo.Children.Add(post);
+                }
+               
+     
+
             }
 
             if (View.SelectedItem == "All Users")
             {
+                StackPanelInfo.Children.Clear();
+                var postOnTheWall = App.Current.UnPost.Values;
+
+                foreach (var postFriend in postOnTheWall)
+                {
+                    var post = new PostWallUserControl(postFriend);
+                    StackPanelInfo.Children.Add(post);
+                }
 
             }
 

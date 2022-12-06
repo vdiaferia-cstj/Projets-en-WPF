@@ -17,6 +17,8 @@ namespace TP2
         public string Image;
         public DateTime DateAndTime;
         public string Visibilty;
+
+
         public int Like;
         public int Love;
         public int Sad;
