@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\angry.png" />
+    <None Remove="Assets\Icons\like.png" />
+    <None Remove="Assets\Icons\love.png" />
+    <None Remove="Assets\Icons\sad.png" />
     <None Remove="Assets\Offers\Cars\car1.jpg" />
     <None Remove="Assets\Offers\Cars\car10.jpg" />
     <None Remove="Assets\Offers\Cars\car11.jpg" />
@@ -44,6 +48,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Icons\angry.png" />
+    <Resource Include="Assets\Icons\like.png" />
+    <Resource Include="Assets\Icons\love.png" />
+    <Resource Include="Assets\Icons\sad.png" />
     <Resource Include="Assets\Posts\post1.jpg" />
     <Resource Include="Assets\Posts\post10.jpg" />
     <Resource Include="Assets\Posts\post11.jpg" />

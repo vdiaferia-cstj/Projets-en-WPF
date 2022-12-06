@@ -74,7 +74,7 @@ namespace TP2
 
             foreach (var userA in App.Current.Users.Values)
             {
-                foreach ( var userB in userA.Fr)
+                foreach (var userB in userA.Fr)
                 {
                     if (LesUsers.Id == userB)
                     {
@@ -83,6 +83,8 @@ namespace TP2
 
                 }
             }
+
+
         }
 
         public void AfficherUser()
@@ -109,8 +111,11 @@ namespace TP2
             StackPanelInfo.Children.Clear();
             foreach (var posts in App.Current.UnPost)
             {
-                var postOnTheWall = new PostWallUserControl(posts.Value);
-                StackPanelInfo.Children.Add(postOnTheWall);
+              
+                    var postOnTheWall = new PostWallUserControl(posts.Value);
+                    StackPanelInfo.Children.Add(postOnTheWall);
+                
+    
             }
 
         }
@@ -178,29 +183,19 @@ namespace TP2
             }
 
 
-                //foreach (var part1 in theUser)
-                //{
-                //    //  var lesFriend = App.Current.Users.
-                //}
-
+               
             }
 
 
 
         }
 
-        private void DisplayByFriends()
-        {
-
-        }
+  
 
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AfficherUser();
             FindFriends();
-            
-
-            
         }
 
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
