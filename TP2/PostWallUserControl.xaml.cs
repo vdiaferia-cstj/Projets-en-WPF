@@ -36,11 +36,37 @@ namespace TP2
             Date.Text = post.DateAndTime.ToString("yyyy-MM-dd");
             Description.Text = post.Description;
 
-            if (post.Reaction[1] == "angry")
+           var thereaction = post.Reaction.Values;
+            var theid = post.Reaction.ContainsKey(post.IdUser);
+            var theid2 = post.Reaction.Values.Select(x=>x.Equals(theid)).ToList();
+        
+            foreach (var item in thereaction)
             {
-                angry.IsChecked = true;
-            }
+              
+                    var react = item;
+                    if (react == "sad")
+                    {
+                        sad.IsChecked = true;
+                    }
+                
 
+             
+                //if (react == "like")
+                //{
+                //    like.IsChecked = true;
+                //}
+                //if (react=="sad")
+                //{
+                //    sad.IsChecked = true;
+                //}
+                //if (react =="love")
+                //{
+
+                //    love.IsChecked = true;
+                //}
+                
+
+            }
 
         }
     }

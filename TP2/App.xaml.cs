@@ -59,17 +59,15 @@ namespace TP2
         public Dictionary<int, Post> UnPost { get => _post; }
         private readonly Dictionary<int, Post> _post = new Dictionary<int, Post>()
         {
-            {1, new Post(){Id=1, IdUser = 1,Title="Nice snack with a book", Description="Salut les potes", Image = "/Assets/Posts/post1.jpg", DateAndTime = new DateTime(2021,11,21), Visibilty="Public",Reaction = new Dictionary<int, string>{
-                
-            } } },
-            {2, new Post(){Id=2, IdUser = 2,Title="Relaxing night at the beach", Description="Salut les potes", Image = "/Assets/Posts/post2.jpg", DateAndTime = new DateTime(2021,11,22), Visibilty="Public",Reaction = new Dictionary<int, string>{{1,"angry"} }  } },
-            {3, new Post(){Id=3, IdUser = 3,Title="Trekking in the woods", Description="Salut les potes", Image = "/Assets/Posts/post3.jpg", DateAndTime = new DateTime(2021,11,23), Visibilty="Public",Reaction = new Dictionary<int, string>{{1,"like"} } } } ,
-            {4, new Post(){Id=4, IdUser = 4,Title="King of the world!", Description="Salut les potes", Image = "/Assets/Posts/post4.jpg", DateAndTime = new DateTime(2021,11,24), Visibilty="Public",Reaction = new Dictionary<int, string> { { 1, "love" } } } },
-            {5, new Post() { Id = 5, IdUser = 5,Title = "After work", Description = "Salut les potes", Image = "/Assets/Posts/post5.jpg", DateAndTime = new DateTime(2021, 11, 25), Visibilty = "Public", Reaction = new Dictionary<int, string> { { 1, "sad" }, { 2, "angry" } } } } ,
+            {1, new Post(){Id=1, IdUser = 1,Title="Nice snack with a book", Description="Salut les potes", Image = "/Assets/Posts/post1.jpg", DateAndTime = new DateTime(2021,11,21), Visibilty="Public",Reaction = new Dictionary<int, string>{} } },
+            {2, new Post(){Id=2, IdUser = 2,Title="Relaxing night at the beach", Description="Salut les potes", Image = "/Assets/Posts/post2.jpg", DateAndTime = new DateTime(2021,11,22), Visibilty="Public",Reaction = new Dictionary<int, string>{{1,"like"} }  } },
+            {3, new Post(){Id=3, IdUser = 3,Title="Trekking in the woods", Description="Salut les potes", Image = "/Assets/Posts/post3.jpg", DateAndTime = new DateTime(2021,11,23), Visibilty="Public",Reaction = new Dictionary<int, string>{{1,"love"} } } } ,
+            {4, new Post(){Id=4, IdUser = 4,Title="King of the world!", Description="Salut les potes", Image = "/Assets/Posts/post4.jpg", DateAndTime = new DateTime(2021,11,24), Visibilty="Public",Reaction = new Dictionary<int, string> { { 1, "sad" }, {2,"angry" }  } } },
+            {5, new Post() { Id = 5, IdUser = 5,Title = "After work", Description = "Salut les potes", Image = "/Assets/Posts/post5.jpg", DateAndTime = new DateTime(2021, 11, 25), Visibilty = "Public", Reaction = new Dictionary<int, string> {  } } } ,
             {6, new Post() { Id = 6, IdUser = 1,Title = "New Zealand 2017", Description = "Salut les potes", Image = "/Assets/Posts/post6.jpg", DateAndTime = new DateTime(2021, 11, 19), Visibilty = "FriendsOnly", Reaction = new Dictionary<int, string> { { 2, "love" } } } } ,
             {7, new Post(){Id=7, IdUser = 1,Title="Sweden 2018", Description="Salut les potes", Image = "/Assets/Posts/post7.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public", Reaction = new Dictionary<int, string> { { 3, "sad" } } }  },
             {8, new Post(){Id=8, IdUser = 1,Title="Internet cafe Sundays", Description="Salut les potes", Image = "/Assets/Posts/post8.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public", Reaction = new Dictionary<int, string> {  } } } ,
-            {9, new Post(){Id=9, IdUser = 2,Title="Surprise!", Description="Salut les potes", Image = "/Assets/Posts/post9.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public", Reaction = new Dictionary<int, string> { { 1, "like" }, { 2, "like" } } } },
+            {9, new Post(){Id=9, IdUser = 2,Title="Surprise!", Description="Salut les potes", Image = "/Assets/Posts/post9.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public", Reaction = new Dictionary<int, string> { { 1, "like" }, { 3, "like" } } } },
             {10,new Post(){Id=10, IdUser = 2,Title="Secret painting", Description="Salut les potes", Image = "/Assets/Posts/post10.jpg", DateAndTime = new DateTime(2021,11,20), Visibilty="Public", Reaction = new Dictionary<int, string> { { 2, "sad" } } } }
 
         };
