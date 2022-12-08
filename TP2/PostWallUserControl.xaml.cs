@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,30 +25,39 @@ namespace TP2
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
         public PostWallUserControl() { InitializeComponent(); }
 
-        public PostWallUserControl(Post post)
+
+        public PostWallUserControl(Post post, User userLoggedIn)
         {
             InitializeComponent();
 
 
             Post_it = post;
-            
+            Firstname.Text = userLoggedIn.FirstName;
             Publication.Source =  new BitmapImage(App.getUri(post.Image));
             Title.Text = post.Title;
             Date.Text = post.DateAndTime.ToString("yyyy-MM-dd");
             Description.Text = post.Description;
 
-           var thereaction = post.Reaction.Values;
+           var thereaction = post.Reaction;
+            
             var theid = post.Reaction.ContainsKey(post.IdUser);
             var theid2 = post.Reaction.Values.Select(x=>x.Equals(theid)).ToList();
         
             foreach (var item in thereaction)
             {
-              
-                    var react = item;
-                    if (react == "sad")
-                    {
-                        sad.IsChecked = true;
-                    }
+                Debug.WriteLine(item.Key.ToString() + "  " + item.Value);
+
+                //Si c'est le meme id que le user connecter
+                if (userLoggedIn.Id == item.Key)
+                {
+                    //ici faire ton code pour mettre la réaction.
+
+                }
+
+                    //if (react == "sad")
+                    //{
+                    //    sad.IsChecked = true;
+                    //}
                 
 
              

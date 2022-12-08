@@ -70,7 +70,7 @@
 
                 </StackPanel>
                 <ScrollViewer Grid.Column="1">
-                    <StackPanel Grid.Column="1" x:Name="StackPanelInfo">
+                    <StackPanel Grid.Column="1" x:Name="StackPanelInfo" >
                         
                  
                 </StackPanel>
