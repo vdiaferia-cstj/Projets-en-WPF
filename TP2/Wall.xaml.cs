@@ -180,13 +180,17 @@ namespace TP2
 
             //var theUser = App.Current.UnPost.Values.Where(x => x.IdUser == ModeView.Id);
             //var loggedInUser = App.Current.Users.Values.Where(x => x.Id == LesUsers.Id).FirstOrDefault();
-            var posts = App.Current.UnPost.Values.Where(y => y.IdUser == ModeView.Id);
-
-            foreach (var p in posts)
+            if (ModeView != null)
             {
-                var postOnTheWall = new PostWallUserControl(p, UserLoggedIn);
-                StackPanelInfo.Children.Add(postOnTheWall);
+                var posts = App.Current.UnPost.Values.Where(y => y.IdUser == ModeView.Id);
+                foreach (var p in posts)
+                {
+                    var postOnTheWall = new PostWallUserControl(p, UserLoggedIn);
+                    StackPanelInfo.Children.Add(postOnTheWall);
+                }
+
             }
+
 
         }
   
