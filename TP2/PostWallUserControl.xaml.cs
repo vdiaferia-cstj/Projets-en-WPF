@@ -24,60 +24,65 @@ namespace TP2
         private Post Post_it;
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
         public PostWallUserControl() { InitializeComponent(); }
-
-
         public PostWallUserControl(Post post, User userLoggedIn)
         {
             InitializeComponent();
+            InformationDunUser(post);
+            InformationDuPost(post, userLoggedIn);
+        }
+        private void InformationDunUser(Post post)
+        {
+            var TrouverIdPost = App.Current.Users.Values.Where(x => x.Id == post.IdUser);
+            foreach (var item in TrouverIdPost)
+            {
+                Firstname.Text = item.FirstName;
+                LastName.Text = item.LastName;
+                imageUser.Source = new BitmapImage(App.getUri(item.Image));
 
 
+            }
+        }
+
+        private void InformationDuPost(Post post, User userloggedIn)
+        {
             Post_it = post;
-            Firstname.Text = userLoggedIn.FirstName;
-            Publication.Source =  new BitmapImage(App.getUri(post.Image));
+            Publication.Source = new BitmapImage(App.getUri(post.Image));
             Title.Text = post.Title;
             Date.Text = post.DateAndTime.ToString("yyyy-MM-dd");
             Description.Text = post.Description;
 
-           var thereaction = post.Reaction;
-            
+
+            var thereaction = post.Reaction;
+
             var theid = post.Reaction.ContainsKey(post.IdUser);
-            var theid2 = post.Reaction.Values.Select(x=>x.Equals(theid)).ToList();
-        
+            var theid2 = post.Reaction.Values.Select(x => x.Equals(theid)).ToList();
+
             foreach (var item in thereaction)
             {
                 Debug.WriteLine(item.Key.ToString() + "  " + item.Value);
 
                 //Si c'est le meme id que le user connecter
-                if (userLoggedIn.Id == item.Key)
+                if (userloggedIn.Id == item.Key)
                 {
-                    //ici faire ton code pour mettre la réaction.
 
+                    switch (item.Value)
+                    {
+                        case "sad":
+                            sad.IsChecked = true;
+                            break;
+                        case "love":
+                            love.IsChecked = true;
+                            break;
+                        case "angry":
+                            angry.IsChecked = true;
+                            break;
+                        case "like":
+                            like.IsChecked = true;
+                            break;
+                    }
                 }
 
-                    //if (react == "sad")
-                    //{
-                    //    sad.IsChecked = true;
-                    //}
-                
-
-             
-                //if (react == "like")
-                //{
-                //    like.IsChecked = true;
-                //}
-                //if (react=="sad")
-                //{
-                //    sad.IsChecked = true;
-                //}
-                //if (react =="love")
-                //{
-
-                //    love.IsChecked = true;
-                //}
-                
-
             }
-
         }
     }
 }

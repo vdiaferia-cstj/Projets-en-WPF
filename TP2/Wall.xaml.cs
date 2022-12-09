@@ -27,22 +27,23 @@ namespace TP2
         public User UserLoggedIn => App.Current.Users.Values.Where(x => x.Id == LesUsers.Id).First();
 
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
-    
 
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public Wall()
         {
            
             InitializeComponent();
             FindUser();
             DisplayPost();
-            //parDatePoto.IsChecked = true;
             if (parDatePoto.IsChecked == true)
             {
                 DisplayPostByDate();
             }
            
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void FindUser()
         {
             foreach (var user in App.Current.Users.Values)
@@ -60,13 +61,9 @@ namespace TP2
 
                 View.Items.Add(view);
             }
-
-            
-
-
-
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void FindFriends()
         {
 
@@ -84,10 +81,9 @@ namespace TP2
 
                 }
             }
-
-
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void AfficherUser()
         {
             var TrouverImage = App.Current.Users.Values.Where(x => x.Id == LesUsers.Id);
@@ -96,18 +92,15 @@ namespace TP2
 
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(ApplicationBaseUri + "/Assets/Users/" + found.Image);
+                bitmap.UriSource = new Uri(ApplicationBaseUri + found.Image);
                 bitmap.EndInit();
 
                 taFace.Source = bitmap;
                 NomUser.Text = LesUsers.FirstName + " " + LesUsers.LastName;
-            }
-
-
-
-            
+            }          
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void DisplayPost() {
             StackPanelInfo.Children.Clear();
             foreach (var posts in App.Current.UnPost)
@@ -120,7 +113,8 @@ namespace TP2
             }
 
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void DisplayPostByDate()
         {
             StackPanelInfo.Children.Clear();
@@ -131,7 +125,8 @@ namespace TP2
                 StackPanelInfo.Children.Add(postOnTheWall);
             }
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void DisplayByUser()
         {
             User user =new User();
@@ -174,6 +169,9 @@ namespace TP2
             }
         }
 
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
+
         private void ResetPostForUser()
         {
             StackPanelInfo.Children.Clear();
@@ -193,7 +191,8 @@ namespace TP2
 
 
         }
-  
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
 
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -201,13 +200,15 @@ namespace TP2
             FindFriends();
             ResetPostForUser();
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
             DisplayByUser();
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void parDatePoto_Click(object sender, RoutedEventArgs e)
         {
             DisplayPostByDate();
