@@ -24,24 +24,26 @@ namespace TP2
         public User user = new User();
         public User LesUsers => (User)LesUtilisateurs.SelectedItem;
         public User ModeView => (User)View.SelectedItem;
+        public User UserLoggedIn => App.Current.Users.Values.Where(x => x.Id == LesUsers.Id).First();
 
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
-    
 
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public Wall()
         {
            
             InitializeComponent();
             FindUser();
             DisplayPost();
-            //parDatePoto.IsChecked = true;
             if (parDatePoto.IsChecked == true)
             {
                 DisplayPostByDate();
             }
            
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void FindUser()
         {
             foreach (var user in App.Current.Users.Values)
@@ -59,13 +61,9 @@ namespace TP2
 
                 View.Items.Add(view);
             }
-
-            
-
-
-
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void FindFriends()
         {
 
@@ -83,10 +81,9 @@ namespace TP2
 
                 }
             }
-
-
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void AfficherUser()
         {
             var TrouverImage = App.Current.Users.Values.Where(x => x.Id == LesUsers.Id);
@@ -95,48 +92,42 @@ namespace TP2
 
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(ApplicationBaseUri + "/Assets/Users/" + found.Image);
+                bitmap.UriSource = new Uri(ApplicationBaseUri + found.Image);
                 bitmap.EndInit();
 
                 taFace.Source = bitmap;
                 NomUser.Text = LesUsers.FirstName + " " + LesUsers.LastName;
-            }
-
-
-
-            
+            }          
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         public void DisplayPost() {
             StackPanelInfo.Children.Clear();
             foreach (var posts in App.Current.UnPost)
             {
               
-                    var postOnTheWall = new PostWallUserControl(posts.Value);
+                    var postOnTheWall = new PostWallUserControl(posts.Value,UserLoggedIn);
                     StackPanelInfo.Children.Add(postOnTheWall);
                 
     
             }
 
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void DisplayPostByDate()
         {
-         
-                StackPanelInfo.Children.Clear();
-                var date = App.Current.UnPost.Values.OrderBy(x => x.DateAndTime);
-                foreach (var trie in date)
-                {
-                    var postOnTheWall = new PostWallUserControl(trie);
-                    StackPanelInfo.Children.Add(postOnTheWall);
-                }
-            
-              
-            
-          
+            StackPanelInfo.Children.Clear();
+            var date = App.Current.UnPost.Values.OrderBy(x => x.DateAndTime);
+            foreach (var trie in date)
+            {
+                var postOnTheWall = new PostWallUserControl(trie, UserLoggedIn);
+                StackPanelInfo.Children.Add(postOnTheWall);
+            }
         }
-
-        private async void DisplayByUser()
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
+        private void DisplayByUser()
         {
             User user =new User();
             if (View.SelectedItem == "Friends")
@@ -145,12 +136,9 @@ namespace TP2
                 var qqch = LesUsers.UserPost;
                 foreach (var postFriend in qqch)
                 {
-                    var post = new PostWallUserControl(postFriend);
+                    var post = new PostWallUserControl(postFriend, UserLoggedIn);
                     StackPanelInfo.Children.Add(post);
                 }
-               
-     
-
             }
 
             if (View.SelectedItem == "All Users")
@@ -160,7 +148,7 @@ namespace TP2
 
                 foreach (var postFriend in postOnTheWall)
                 {
-                    var post = new PostWallUserControl(postFriend);
+                    var post = new PostWallUserControl(postFriend,UserLoggedIn);
                     StackPanelInfo.Children.Add(post);
                 }
 
@@ -168,42 +156,59 @@ namespace TP2
 
             if (View.SelectedItem!="Friends" && View.SelectedItem != "All Users")
             {
+                var theUser = App.Current.UnPost.Values.Where(x => x.IdUser == ModeView.Id);
+                
+                StackPanelInfo.Children.Clear();
 
+                foreach (var postOfTom in theUser)
+                {
+                    var postOnTheWall = new PostWallUserControl(postOfTom, UserLoggedIn);
+                    StackPanelInfo.Children.Add(postOnTheWall);
+                }
 
-            var theUser = App.Current.UnPost.Values.Where(x => x.IdUser == ModeView.Id);
+            }
+        }
 
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
 
-
+        private void ResetPostForUser()
+        {
             StackPanelInfo.Children.Clear();
 
-            foreach (var postOfTom in theUser)
+            //var theUser = App.Current.UnPost.Values.Where(x => x.IdUser == ModeView.Id);
+            //var loggedInUser = App.Current.Users.Values.Where(x => x.Id == LesUsers.Id).FirstOrDefault();
+            if (ModeView != null)
             {
-                var postOnTheWall = new PostWallUserControl(postOfTom);
-                StackPanelInfo.Children.Add(postOnTheWall);
+                var posts = App.Current.UnPost.Values.Where(y => y.IdUser == ModeView.Id);
+                foreach (var p in posts)
+                {
+                    var postOnTheWall = new PostWallUserControl(p, UserLoggedIn);
+                    StackPanelInfo.Children.Add(postOnTheWall);
+                }
+
             }
-
-
-               
-            }
-
 
 
         }
-
-  
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
 
         private void LesUtilisateurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AfficherUser();
             FindFriends();
+            ResetPostForUser();
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
             DisplayByUser();
         }
-
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         private void parDatePoto_Click(object sender, RoutedEventArgs e)
         {
             DisplayPostByDate();

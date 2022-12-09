@@ -6,27 +6,50 @@
              xmlns:local="clr-namespace:TP2"
              mc:Ignorable="d" 
              
-             d:DesignHeight="750" d:DesignWidth="800">
-    <StackPanel Background="#FF272727">
-        <TextBlock FontSize="40" Foreground="White" x:Name="Firstname"></TextBlock>
+             d:DesignHeight="750" d:DesignWidth="900">
+    <StackPanel  Background="#FF272727">
+        <WrapPanel>
+            <Border CornerRadius="30,30,30,30">
+                <Image Margin="0,0,10,0" Width="30" Height="30" x:Name="imageUser"></Image>
+            </Border>
+            <TextBlock FontSize="10" Margin="0,0,10,0" Foreground="White" x:Name="Firstname">Allo</TextBlock>
+            <TextBlock FontSize="10"  Foreground="White" x:Name="LastName">Allo</TextBlock>
+
+
+        </WrapPanel>
         <Image x:Name="Publication" Height="400" Width="800" />
         <WrapPanel>
-            <ToggleButton Height="40" Margin="0,0,10,0" Width="40" Foreground="Black" x:Name="angry">
+            <WrapPanel Margin="0,0,10,0">
+            <ToggleButton Height="40"  Width="40" Foreground="Black" x:Name="angry">
                 <Image Source="/Assets/Icons/angry.png"></Image>
             </ToggleButton>
+                <TextBlock x:Name="madCount" Foreground="White"></TextBlock>
+            </WrapPanel>
+            <WrapPanel>
             <ToggleButton Height="40" Margin="0,0,10,0" Width="40" Foreground="White" x:Name="like">
                 <Image Source="/Assets/Icons/like.png"></Image>
             </ToggleButton>
+                <TextBlock x:Name="likeCount" Foreground="White"></TextBlock>
+            </WrapPanel>
+            <WrapPanel>
             <ToggleButton Height="40" Margin="0,0,10,0" Width="40" Foreground="White" x:Name="love">
                 <Image Source="/Assets/Icons/love.png"></Image>
-            </ToggleButton>
+                </ToggleButton>
+                <TextBlock x:Name="loveCount" Foreground="White"></TextBlock>
+            </WrapPanel>
+            <WrapPanel>
             <ToggleButton Height="40" Margin="0,0,10,0" Width="40" Foreground="White"  x:Name="sad">
                 <Image Source="/Assets/Icons/sad.png"></Image>
             </ToggleButton>
+                <TextBlock x:Name="sadCount" Foreground="White"></TextBlock>
+            </WrapPanel>
         </WrapPanel >
-        <TextBlock Foreground="White" x:Name="Title">Title</TextBlock>
-        <TextBlock Foreground="White" x:Name="Date">Date</TextBlock>
-        <TextBlock Foreground="White" x:Name="Description">Description</TextBlock>
-
+        <Border BorderThickness="3" >
+        <StackPanel >
+        <TextBlock FontWeight="Bold" FontSize="20" Foreground="White" x:Name="Title">Title</TextBlock>
+        <TextBlock Foreground="#FF5F5F61" x:Name="Date">Date</TextBlock>
+        <TextBlock FontFamily="Bahnschrift SemiBold" Foreground="White" x:Name="Description">Description</TextBlock>
+        </StackPanel>
+        </Border>
     </StackPanel>
 </UserControl>

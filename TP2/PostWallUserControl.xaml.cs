@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,25 +24,65 @@ namespace TP2
         private Post Post_it;
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2;component";
         public PostWallUserControl() { InitializeComponent(); }
-
-        public PostWallUserControl(Post post)
+        public PostWallUserControl(Post post, User userLoggedIn)
         {
             InitializeComponent();
+            InformationDunUser(post);
+            InformationDuPost(post, userLoggedIn);
+        }
+        private void InformationDunUser(Post post)
+        {
+            var TrouverIdPost = App.Current.Users.Values.Where(x => x.Id == post.IdUser);
+            foreach (var item in TrouverIdPost)
+            {
+                Firstname.Text = item.FirstName;
+                LastName.Text = item.LastName;
+                imageUser.Source = new BitmapImage(App.getUri(item.Image));
 
 
+            }
+        }
+
+        private void InformationDuPost(Post post, User userloggedIn)
+        {
             Post_it = post;
-            
-            Publication.Source =  new BitmapImage(App.getUri(post.Image));
+            Publication.Source = new BitmapImage(App.getUri(post.Image));
             Title.Text = post.Title;
             Date.Text = post.DateAndTime.ToString("yyyy-MM-dd");
             Description.Text = post.Description;
 
-            if (post.Reaction[1] == "angry")
+
+            var thereaction = post.Reaction;
+
+            var theid = post.Reaction.ContainsKey(post.IdUser);
+            var theid2 = post.Reaction.Values.Select(x => x.Equals(theid)).ToList();
+
+            foreach (var item in thereaction)
             {
-                angry.IsChecked = true;
+                Debug.WriteLine(item.Key.ToString() + "  " + item.Value);
+
+                //Si c'est le meme id que le user connecter
+                if (userloggedIn.Id == item.Key)
+                {
+
+                    switch (item.Value)
+                    {
+                        case "sad":
+                            sad.IsChecked = true;
+                            break;
+                        case "love":
+                            love.IsChecked = true;
+                            break;
+                        case "angry":
+                            angry.IsChecked = true;
+                            break;
+                        case "like":
+                            like.IsChecked = true;
+                            break;
+                    }
+                }
+
             }
-
-
         }
     }
 }
