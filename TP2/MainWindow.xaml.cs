@@ -41,7 +41,8 @@ namespace TP2
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-          
+            Magasin steam = new Magasin();
+            steam.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
