@@ -32,7 +32,7 @@ namespace TP2
         // -------------------------------------------------------------------------------------------------------------
         public Wall()
         {
-           
+
             InitializeComponent();
             FindUser();
             DisplayPost();
@@ -40,7 +40,7 @@ namespace TP2
             {
                 DisplayPostByDate();
             }
-           
+
         }
         // -------------------------------------------------------------------------------------------------------------
         // -------------------------------------------------------------------------------------------------------------
@@ -97,19 +97,17 @@ namespace TP2
 
                 taFace.Source = bitmap;
                 NomUser.Text = LesUsers.FirstName + " " + LesUsers.LastName;
-            }          
+            }
         }
         // -------------------------------------------------------------------------------------------------------------
         // -------------------------------------------------------------------------------------------------------------
-        public void DisplayPost() {
+        public void DisplayPost()
+        {
             StackPanelInfo.Children.Clear();
             foreach (var posts in App.Current.UnPost)
             {
-              
-                    var postOnTheWall = new PostWallUserControl(posts.Value,UserLoggedIn);
-                    StackPanelInfo.Children.Add(postOnTheWall);
-                
-    
+                var postOnTheWall = new PostWallUserControl(posts.Value, UserLoggedIn);
+                StackPanelInfo.Children.Add(postOnTheWall);
             }
 
         }
@@ -129,7 +127,7 @@ namespace TP2
         // -------------------------------------------------------------------------------------------------------------
         private void DisplayByUser()
         {
-            User user =new User();
+            User user = new User();
             if (View.SelectedItem == "Friends")
             {
                 StackPanelInfo.Children.Clear();
@@ -148,16 +146,16 @@ namespace TP2
 
                 foreach (var postFriend in postOnTheWall)
                 {
-                    var post = new PostWallUserControl(postFriend,UserLoggedIn);
+                    var post = new PostWallUserControl(postFriend, UserLoggedIn);
                     StackPanelInfo.Children.Add(post);
                 }
 
             }
 
-            if (View.SelectedItem!="Friends" && View.SelectedItem != "All Users")
+            if (View.SelectedItem != "Friends" && View.SelectedItem != "All Users")
             {
                 var theUser = App.Current.UnPost.Values.Where(x => x.IdUser == ModeView.Id);
-                
+
                 StackPanelInfo.Children.Clear();
 
                 foreach (var postOfTom in theUser)

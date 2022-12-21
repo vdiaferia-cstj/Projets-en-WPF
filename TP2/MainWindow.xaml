@@ -7,22 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="250">
     <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition ></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
 
-        <Button Foreground="White" Margin="0,20,0,20" Click="Wall_Button" Background="#FF3A69C7">
+        <Button Foreground="White" Margin="10,20,10,20" Click="Wall_Button" Background="#FF3A69C7">
             Wall
         </Button>
 
 
-        <Button Foreground="White" Margin="0,20,0,20" Grid.Row="1" Click="Button_Click" Background="#FF3A69C7">
+        <Button Foreground="White" Margin="10,20,10,20" Grid.Row="1" Click="Button_Click" Background="#FF3A69C7">
             Marketplace
         </Button>
 
+        <Button Foreground="White" Margin="10,20,10,20" Grid.Row="1" Grid.Column="1" Click="Button_Click_1" Background="#FF3A69C7">
+            Steam
+        </Button>
 
+        <Button Foreground="White" Margin="10,20,10,20" Grid.Row="0" Grid.Column="1" Click="Button_Click_2" Background="#FF3A69C7">
+            La Source
+        </Button>
 
     </Grid>
 

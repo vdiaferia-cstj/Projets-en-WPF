@@ -45,7 +45,6 @@ namespace TP2
 
         private void InformationDuPost(Post post, User userloggedIn)
         {
-            Post_it = post;
             Publication.Source = new BitmapImage(App.getUri(post.Image));
             Title.Text = post.Title;
             Date.Text = post.DateAndTime.ToString("yyyy-MM-dd");

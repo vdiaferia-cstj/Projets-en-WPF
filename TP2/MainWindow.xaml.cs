@@ -38,5 +38,16 @@ namespace TP2
             Wall window = new Wall();
             window.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            LaSource window = new LaSource();
+            window.Show();
+        }
     }
 }
