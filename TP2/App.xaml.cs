@@ -22,6 +22,18 @@ namespace TP2
         }
 
 
+        public List<Product> Products { get => _products; }
+        private readonly List<Product> _products = new List<Product>()
+        {
+           new NewProduct(){Id=1,Name="Choo-Choo Charles",Short="ccc",BasePrice=25.99,Tags = new string[]{"Horreur","Monde ouvert"},Image="choochoocharles.jpg",OS = "Mac", DateSortie=new DateTime(2022,12,13), Ratings = 37},
+           new PopularProduct(){Id=2,Name="GTA V",Short="gta",BasePrice=49.99,Tags = new string[]{"Monde ouvert","Action","Multijoueur"},OS = "Windows",Image="gta5.jpg",Ratings = 560948,NbSales = 100000},
+           new ProductOnSale(){Id=3,Name="Hunt Showdown",Short="hs",BasePrice=54,SalePrice=21.60,OS = "Windows",Image="r6.jpg",Tags=new string[]{"Tactique","Survie"},Ratings = 115201 },
+           new NewProduct(){Id=4,Name="High On Life",Short="highonlife",BasePrice=68.99,Tags = new string[] {"FPS","Comédie" },Image="highonlife.jpg",OS="Mac",DateSortie=new DateTime(2022,12,14),Ratings = 975},
+           new PopularProduct(){Id=5,Name="R6",Short="r6",BasePrice=39.99,Tags = new string[]{"Stratégie","Rageant","Multijoueur"},Image="r6.jpg",OS="Mac",Ratings=57941,NbSales = 1000000},
+           new ComingSoonProduct(){Id=6,Name="The House of Da Vinci 3",Short="thodv",PreOrderPrice=89.99,BasePrice=69.99,Image="houseofdavinci3.jpg",DatePreOrderSortie=new DateTime(2023,01,01),OS="Mac",Ratings=0,Tags = new string[]{"Casse tête","Aventure"}},
+           new ProductOnSale(){Id=8,Name="CSGO",Short="csgo",BasePrice=38.99,SalePrice=10.65,OS = "Windows",Image="r6.jpg",Tags=new string[]{"Tactique","Survie"},Ratings = 115201 },
+           new Product(){Id=7,Name="Rust",Short="rust",BasePrice=50.99,OS="Windows",Tags = new string[]{"Rageant","Multijoueur","Monde ouvert"},Image="rust.jpg",Ratings=259093}
+        };
 
         public Dictionary<int, Auto> Autos { get => _autos; }
         private readonly Dictionary<int, Auto> _autos = new Dictionary<int, Auto>()
