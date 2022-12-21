@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using TP2.Classes;
 
 namespace TP2
 {
@@ -72,5 +73,28 @@ namespace TP2
 
         };
 
+
+        public Dictionary<int, int> Cart = new Dictionary<int, int>();
+
+        public Dictionary<int, UsersSource> UsersSource { get => _userSource; }
+        private readonly Dictionary<int, UsersSource> _userSource = new Dictionary<int, UsersSource>()
+        {
+            {1,new UsersSource() {Id=1, Courriel="Lafortune@outlook.com", FirstName= "Simon", LastName  ="Lafortune",  } },
+            {2,new UsersSource() {Id=2, Courriel="LR@hotmail.com", FirstName= "Ludo",LastName  ="Robichaud",} },
+            {3,new UsersSource() {Id=3, Courriel="VFournier@outlook.com", FirstName= "Vincent",LastName  ="Fournier",}},
+            {4,new UsersSource() {Id=4, Courriel="DiafCed@gmail.com", FirstName= "Cedrick",LastName  ="Diaferia",} },
+            {5,new UsersSource() {Id=5, Courriel="dav@outlook.com", FirstName= "David", LastName ="Groulx"}},
+    };
+
+        public Dictionary<int, Article> Articles { get => _article; }
+        private readonly Dictionary<int, Article> _article = new Dictionary<int, Article>()
+        {
+            {1,new Article() {id=1,Marque="Samsung",Categorie="Utilitaire", image="/Assets/LaSource/Polaroid.jpg",prix=15.99, nom="Polaroid qui a bin de l'allure ! ", disponibiliteEnLigne="Non Disponible", disponibiliteEnMagasin="Disponible", Avis="4" } },
+            {2,new Article() {id=2,Marque="Samsung",Categorie="Utilitaire", image="/Assets/LaSource/Watch.jpg",prix=299.99, nom="montre (tout ce qui a de plus normal)", disponibiliteEnLigne="Non Disponible", disponibiliteEnMagasin="Non Disponible", Avis="2" } },
+            {3,new Article() {id=3,Marque="Apple",Categorie="Accessoire", image="/Assets/LaSource/Controller.jpg",prix=79.99, nom="manette xbox", disponibiliteEnLigne="Disponible", disponibiliteEnMagasin="Disponible", Avis="4" } },
+            {4,new Article() {id=4,Marque="Samsung",Categorie="Ecran", image="/Assets/LaSource/Tablette.jpg",prix=899.99, nom="belle tite tablette", disponibiliteEnLigne="Non Disponible", disponibiliteEnMagasin="Non Disponible", Avis="5" } },
+            {5,new Article() {id=5,Marque="Apple",Categorie="Accessoire", image="/Assets/LaSource/Airpods.jpg",prix=299.99, nom="Un ecouteur ( y en manque un )", disponibiliteEnLigne="Disponible", disponibiliteEnMagasin="Disponible", Avis="0" } },
+            {6,new Article() {id=6,Marque="Asus",Categorie="Ecran", image="/Assets/LaSource/UnEcran.jpg",prix=199.99, nom="ecran poche", disponibiliteEnLigne="Disponible", disponibiliteEnMagasin="Non Disponible", Avis="1" } },
+    };
     }
 }
