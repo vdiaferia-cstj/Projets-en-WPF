@@ -23,7 +23,7 @@ namespace TP2
     public partial class DisplayProductsControl : UserControl
     {
         public static readonly string ApplicationBaseUri = "pack://application:,,,/TP2_Window_David;component";
-        private Article miniArticle;
+        private Article articles;
         
         public DisplayProductsControl(Article article)
         {
@@ -46,17 +46,18 @@ namespace TP2
                 DispoMag.Text = item.disponibiliteEnMagasin;
 
 
-                //var message = MessageBox.Show($"Voulez-vous vraiment masquer {item.nom} ?", "Masquer", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                //if (message == MessageBoxResult.Yes)
-                //{
-                //    App.Current.Articles.Remove(item.id);
-                //}
+               
             }
         }
 
         private void Masquer_Click(object sender, RoutedEventArgs e)
         {
-
+            //var collectionArticle = App.Current.Articles.Where(x => x.Value.id == articles.id);
+            //var message = MessageBox.Show($"voulez-vous vraiment masquer {collectionArticle} ?", "masquer", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            //if (message == MessageBoxResult.Yes)
+            //{
+            //    App.Current.Articles.Remove(collectionArticle);
+            //}
 
         }
 
