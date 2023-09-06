@@ -3,6 +3,7 @@
 Ceci est un travail fait à deux en utilisant WPF. Nous avons utilisé GitKraken.
 
 Nous avions des petites windows à faire. Celle qui ressemble à Steam était une window qu'on pouvait faire de notre choix, tant qu'on respectait les critères.
+Voici mes windows :
 
 Marketplace
 ![marketplace1](https://github.com/vdiaferia-cstj/Projets-en-WPF/assets/70543720/8d7e0e52-ac10-4396-bf5e-a1edf39acf4f)
